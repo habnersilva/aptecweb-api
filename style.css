@@ -1,0 +1,44 @@
+body { padding: 45px 0; }
+pre {white-space: pre-wrap;}
+
+/* Entities*/
+section#entities { margin-top: 45px; }
+section#entities .entity { margin-top: 45px; }
+
+/* Endpoint */
+section#entities .endpoint { margin-top: 15px; }
+section#entities h5 { display: inline;}
+section#entities .endpoint {border: solid 1px;}
+section#entities .endpoint-title { padding: 1em; }
+
+section#entities .endpoint .endpoint-summary-path { font-size: 16px; font-family: monospace; padding: 0 10px; font-weight: 600 }
+section#entities .endpoint-body { font-size: 12px; }
+section#entities .endpoint-body pre { background-color: #333; color:#fff; padding: 10px; }
+
+section#entities .parameters-wrapper-header { padding: 8px; background: #fffc; }
+section#entities .parameters-inner { padding: 15px; }
+
+section#entities .request-wrapper-header { padding: 8px; background: #fffc; }
+section#entities .request-inner { padding: 15px; }
+
+section#entities .responses-wrapper-header{ padding: 8px; background: #fffc; }
+section#entities .responses-inner { padding: 15px; }
+
+
+
+/* Colors */
+
+/* Get */
+section#entities .endpoint.GET { border-color: #61affe; background-color: #61affe1a }
+
+/* Post */
+section#entities .endpoint.POST { border-color: #49cc90; background: #49cc901a;}
+section#entities .endpoint.POST .endpoint-title a{ color: #fff; border-color: #49cc90; background: #49cc90; }
+
+/* Put */
+section#entities .endpoint.PUT { border-color: #fca130; background: #fca1301a;}
+section#entities .endpoint.PUT .endpoint-title a{ color: #fff; border-color: #fca130; background: #fca130; }
+
+/* Delete */
+section#entities .endpoint.DELETE { border-color: #f93e3e; background: #f93e3e1a;}
+section#entities .endpoint.DELETE .endpoint-title a{ color: #fff; border-color: #f93e3e; background: #f93e3e; }

@@ -1,0 +1,229 @@
+{
+    "entities": [
+        {
+            "name": "Categorias",
+            "slug": "categorias",
+            "description": "Categorias de produtos",
+            "endpoints": [
+                {
+                    "slug": "get_wswscategorias",
+                    "name": "/ws/wscategorias",
+                    "method": "GET",
+                    "description": "Retorna todas as categorias"
+                },
+                {
+                    "slug": "post_wswscategorias",
+                    "name": "/ws/wscategorias",
+                    "method": "POST",
+                    "description": "Adiciona uma categoria"
+                },
+                {
+                    "slug": "get_wswscategorias_id",
+                    "name": "/ws/wscategorias/{id}",
+                    "method": "GET",
+                    "description": "Localiza uma categoria"
+                },
+                {
+                    "slug": "put_wswscategorias_id",
+                    "name": "/ws/wscategorias/{id}",
+                    "method": "PUT",
+                    "description": "Edita uma categoria"
+                },
+                {
+                    "slug": "delete_wswscategorias_id",
+                    "name": "/ws/wscategorias/{id}",
+                    "method": "DELETE",
+                    "description": "Exclui uma categoria"
+                }
+            ]
+        },
+        {
+            "name": "Unidades",
+            "slug": "unidades",
+            "description": "Unidades de medida",
+            "endpoints": [
+                {
+                    "slug": "get_wswsunidades",
+                    "name": "/ws/wsunidades",
+                    "method": "GET",
+                    "description": "Retorna todas as unidades de medida"
+                },
+                {
+                    "slug": "post_wswsunidades",
+                    "name": "/ws/wsunidades",
+                    "method": "POST",
+                    "description": "Adiciona uma unidade de medida"
+                },
+                {
+                    "slug": "get_wswsunidades_id",
+                    "name": "/ws/wsunidades/{id}",
+                    "method": "GET",
+                    "description": "Localiza uma unidade de medida"
+                },
+                {
+                    "slug": "put_wswsunidades_id",
+                    "name": "/ws/wsunidades/{id}",
+                    "method": "PUT",
+                    "description": "Edita uma unidade de medida"
+                },
+                {
+                    "slug": "delete_wswsunidades_id",
+                    "name": "/ws/wsunidades/{id}",
+                    "method": "DELETE",
+                    "description": "Exclui uma unidade de medida"
+                }
+            ]
+        },
+        {
+            "name": "Marcas",
+            "slug": "marcas",
+            "description": "Marcas de produtos",
+            "endpoints": [
+                {
+                    "slug": "get_wswsmarcas",
+                    "name": "/ws/wsmarcas",
+                    "method": "GET",
+                    "description": "Retorna todas as marcas"
+                },
+                {
+                    "slug": "post_wswsmarcas",
+                    "name": "/ws/wsmarcas",
+                    "method": "POST",
+                    "description": "Adiciona uma marca"
+                },
+                {
+                    "slug": "get_wswsmarcas_id",
+                    "name": "/ws/wsmarcas/{id}",
+                    "method": "GET",
+                    "description": "Localiza uma marca"
+                },
+                {
+                    "slug": "put_wswsmarcas_id",
+                    "name": "/ws/wsmarcas/{id}",
+                    "method": "PUT",
+                    "description": "Edita uma marca"
+                },
+                {
+                    "slug": "delete_wswsmarcas_id",
+                    "name": "/ws/wsmarcas/{id}",
+                    "method": "DELETE",
+                    "description": "Exclui uma marca"
+                }
+            ]
+        },
+        {
+            "name": "Combinações",
+            "slug": "combinacoes",
+            "description": "Combinações de produtos",
+            "endpoints": [
+                {
+                    "slug": "get_wswscombinacoes",
+                    "name": "/ws/wscombinacoes",
+                    "method": "GET",
+                    "description": "Retorna todas as combinações"
+                },
+                {
+                    "slug": "post_wswscombinacoes",
+                    "name": "/ws/wscombinacoes",
+                    "method": "POST",
+                    "description": "Adiciona uma combinação"
+                },
+                {
+                    "slug": "get_wswscombinacoes_id",
+                    "name": "/ws/wscombinacoes/{id}",
+                    "method": "GET",
+                    "description": "Localiza uma combinação"
+                },
+                {
+                    "slug": "put_wswscombinacoes_id",
+                    "name": "/ws/wscombinacoes/{id}",
+                    "method": "PUT",
+                    "description": "Edita uma combinação"
+                },
+                {
+                    "slug": "delete_wswscombinacoes_id",
+                    "name": "/ws/wscombinacoes/{id}",
+                    "method": "DELETE",
+                    "description": "Exclui uma combinação"
+                }
+            ]
+        },
+        {
+            "name": "Produtos",
+            "slug": "produtos",
+            "description": "Produtos cadastrados",
+            "endpoints": [
+                {
+                    "slug": "get_wswsprodutos",
+                    "name": "/ws/wsprodutos",
+                    "method": "GET",
+                    "description": "Retorna todos os produtos"
+                },
+                {
+                    "slug": "post_wswsprodutos",
+                    "name": "/ws/wsprodutos",
+                    "method": "POST",
+                    "description": "Adiciona um produto"
+                },
+                {
+                    "slug": "get_wswsprodutos_id",
+                    "name": "/ws/wsprodutos/{id}",
+                    "method": "GET",
+                    "description": "Localiza um produto"
+                }
+            ]
+        },
+        {
+            "name": "Estoque",
+            "slug": "estoque",
+            "description": "Itens de estoque",
+            "endpoints": [
+                {
+                    "slug": "get_ws_wsprodutos_estoque_id",
+                    "name": "/ws/wsprodutos_estoque/{id}",
+                    "method": "GET",
+                    "description": "Consulta quantidade de um item de estoque"
+                },
+                {
+                    "slug": "put_ws_wsprodutos_estoque_id",
+                    "name": "/ws/wsprodutos_estoque/{id}",
+                    "method": "PUT",
+                    "description": "Edita quantidade de um item de estoque"
+                },
+                {
+                    "slug": "get_ws_wsprodutos_preco_id",
+                    "name": "/ws/wsprodutos_preco/{id}",
+                    "method": "GET",
+                    "description": "Consulta preço de um item de estoque"
+                },
+                {
+                    "slug": "put_ws_wsprodutos_preco_id",
+                    "name": "/ws/wsprodutos_preco/{id}",
+                    "method": "PUT",
+                    "description": "Edita preço de um item de estoque"
+                }
+                
+            ]
+        },
+        {
+            "name": "Pedidos",
+            "slug": "pedidos",
+            "description": "Pedidos da loja",
+            "endpoints": [
+                {
+                    "slug": "get_ws_wspedidos",
+                    "name": "/ws/wspedidos",
+                    "method": "GET",
+                    "description": "Retorna todos os pedidos"
+                },
+                {
+                    "slug": "get_ws_wspedidos_id",
+                    "name": "/ws/wspedidos/{id}",
+                    "method": "GET",
+                    "description": "Localiza um pedido"
+                }
+            ]
+        }
+
+    ]
+}

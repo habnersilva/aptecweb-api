@@ -1,0 +1,16 @@
+
+<% endpoints.forEach( endpoint => { %>
+
+<div class="endpoint <%= endpoint.method %>">
+    <div class="endpoint-title" data-toggle="collapse" href="#collapse<%= endpoint.slug %>" role="button" aria-expanded="false" aria-controls="collapse<%= endpoint.slug %>">
+        <a class="btn btn-primary btn-sm" href="#">
+           <%= endpoint.method %>
+        </a> 
+        <span class="endpoint-summary-path"><%= endpoint.name %></span>
+        <small><%= endpoint.description %></small>
+    </div>
+    <div class="endpoint-body collapse" id="collapse<%= endpoint.slug %>">
+        <%- include( entity.slug + '/' + endpoint.slug ) %>            
+    </div>
+</div>
+<% }) %>

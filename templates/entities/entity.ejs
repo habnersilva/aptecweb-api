@@ -1,0 +1,14 @@
+<% entities.forEach( entity => { %>
+
+    <div class="entity">
+        <div class="entity-header">
+            <h5><%= entity.name %></h5>
+            <small><%= entity.description %></small>
+            <hr>
+        </div>
+        <div class="entity-body">           
+            <%- include('endpoint', { entity, endpoints: entity.endpoints }) %>
+        </div>
+    </div>
+
+<% }) %>

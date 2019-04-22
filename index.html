@@ -1,0 +1,3150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AptecWeb Api</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <section id="introducao">
+            <h1>AptecWeb API</h1>
+<p>Esta é a API da plataforma AptecWeb. A seguinte URL deve ser utilizada para consultar a API.<br />
+<code>https://&lt;endereco_loja&gt;/ws</code></p>
+<p>Para cada consulta, deve-se inserir a extensão .json no final da URL. Veja abaixo alguns exemplos:</p>
+<p>Consulta todos os produtos:<br />
+<code>https://&lt;endereco_loja&gt;/ws/wsprodutos.json</code><br /></p>
+
+<p>Consulta produto específico:<br />
+<code>https://&lt;endereco_loja&gt;/ws/wsprodutos/&lt;id_produto&gt;.json</code></p>
+
+<p>Todas as requisições devem possuir o parametro <em>appKey</em> no cabeçalho da requisição. O <em>appKey</em> pode ser obtido no próprio painel da loja, clicando no nome do usuário no canto superior direito.</p>
+
+        </section>
+        
+        <section id="entities">             
+            
+
+    <div class="entity">
+        <div class="entity-header">
+            <h5>Categorias</h5>
+            <small>Categorias de produtos</small>
+            <hr>
+        </div>
+        <div class="entity-body">           
+            
+
+
+<div class="endpoint GET">
+    <div class="endpoint-title" data-toggle="collapse" href="#collapseget_wswscategorias" role="button" aria-expanded="false" aria-controls="collapseget_wswscategorias">
+        <a class="btn btn-primary btn-sm" href="#">
+           GET
+        </a> 
+        <span class="endpoint-summary-path">/ws/wscategorias</span>
+        <small>Retorna todas as categorias</small>
+    </div>
+    <div class="endpoint-body collapse" id="collapseget_wswscategorias">
+        <div class="responses-wrapper">
+    <div class="responses-wrapper-header">
+        <h6>Responses</h6>
+    </div>
+    <div class="responses-inner">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">200</th>
+                    <td>
+
+                        <pre>sucesso</pre>
+                        
+                        <p>Example Value</p>
+
+        <pre>{
+            "result": [{
+                "Wscategoria": {
+                    "id": 0,
+                    "parerent_id": 0,
+                    "ativo": 0,
+                    "nome": "string",
+                    "descricao": "string",
+                    "slug": "string",
+                    "tag_h1": "string",
+                    "meta_title": "string",
+                    "meta_keywords": "string",
+                    "meta_description": "string",
+                    "classes_adicionais": "string"
+                }
+            }]
+        }</pre>
+
+
+                    </td>
+                    <td>No links</td>
+                </tr>
+                <tr>
+                    <th scope="row">400</th>
+                    <td><pre>falha</pre></td>
+                    <td>No links</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>            
+    </div>
+</div>
+
+
+<div class="endpoint POST">
+    <div class="endpoint-title" data-toggle="collapse" href="#collapsepost_wswscategorias" role="button" aria-expanded="false" aria-controls="collapsepost_wswscategorias">
+        <a class="btn btn-primary btn-sm" href="#">
+           POST
+        </a> 
+        <span class="endpoint-summary-path">/ws/wscategorias</span>
+        <small>Adiciona uma categoria</small>
+    </div>
+    <div class="endpoint-body collapse" id="collapsepost_wswscategorias">
+        <div class="request-wrapper">
+    <div class="request-wrapper-header">
+        <h6>Request body <span class="badge badge-warning">required</span></h6>
+    </div>
+    <div class="request-inner">
+        
+        <p>Example Value</p>
+        
+<pre>{
+    "id": 0,
+    "parerent_id": 0,
+    "ativo": 0,
+    "nome": "string",
+    "descricao": "string",
+    "slug": "string",
+    "tag_h1": "string",
+    "meta_title": "string",
+    "meta_keywords": "string",
+    "meta_description": "string",
+    "classes_adicionais": "string"
+}</pre>
+
+    </div>
+</div>
+
+<div class="responses-wrapper">
+    <div class="responses-wrapper-header">
+        <h6>Responses</h6>
+    </div>
+    <div class="responses-inner">
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">200</th>
+                    <td>
+
+                        <pre>sucesso</pre>
+                        
+                        <p>Example Value</p>
+
+<pre>{
+    "result": {
+        "Wscategoria": {
+            "id": 0,
+            "parerent_id": 0,
+            "ativo": 0,
+            "nome": "string",
+            "descricao": "string",
+            "slug": "string",
+            "tag_h1": "string",
+            "meta_title": "string",
+            "meta_keywords": "string",
+            "meta_description": "string",
+            "classes_adicionais": "string"
+        }
+    }
+}</pre>
+
+                    </td>
+                    <td>No links</td>
+                </tr>
+                <tr>
+                    <th scope="row">400</th>
+                    <td><pre>falha</pre></td>
+                    <td>No links</td>
+                </tr>
+            </tbody>
+        </table>
+                  
+    </div>
+</div>
+ 
+ 
+             
+    </div>
+</div>
+
+
+<div class="endpoint GET">
+    <div class="endpoint-title" data-toggle="collapse" href="#collapseget_wswscategorias_id" role="button" aria-expanded="false" aria-controls="collapseget_wswscategorias_id">
+        <a class="btn btn-primary btn-sm" href="#">
+           GET
+        </a> 
+        <span class="endpoint-summary-path">/ws/wscategorias/{id}</span>
+        <small>Localiza uma categoria</small>
+    </div>
+    <div class="endpoint-body collapse" id="collapseget_wswscategorias_id">
+        <div class="parameters-wrapper">
+    <div class="parameters-wrapper-header">
+        <h6>Parameters</h6>
+    </div>
+    <div class="parameters-inner">
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">id (integer) <span class="badge badge-warning">required</span></th>
+                    <td>ID da categoria a ser localizada</td>                    
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<div class="responses-wrapper">
+    <div class="responses-wrapper-header">
+        <h6>Responses</h6>
+    </div>
+    <div class="responses-inner">
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">200</th>
+                    <td>
+
+                        <pre>sucesso</pre>
+                        
+                        <p>Example Value</p>
+
+<pre>{
+    "result": {
+        "Wscategoria": {
+        "id": 0,
+        "parerent_id": 0,
+        "ativo": 0,
+        "nome": "string",
+        "descricao": "string",
+        "slug": "string",
+        "tag_h1": "string",
+        "meta_title": "string",
+        "meta_keywords": "string",
+        "meta_description": "string",
+        "classes_adicionais": "string"
+        }
+    }
+}</pre>
+
+                    </td>
+                    <td>No links</td>
+                </tr>
+                <tr>
+                    <th scope="row">400</th>
+                    <td><pre>falha</pre></td>
+                    <td>No links</td>
+                </tr>
+            </tbody>
+        </table>
+                  
+    </div>
+</div>
+ 
+ 
+             
+    </div>
+</div>
+
+
+<div class="endpoint PUT">
+    <div class="endpoint-title" data-toggle="collapse" href="#collapseput_wswscategorias_id" role="button" aria-expanded="false" aria-controls="collapseput_wswscategorias_id">
+        <a class="btn btn-primary btn-sm" href="#">
+           PUT
+        </a> 
+        <span class="endpoint-summary-path">/ws/wscategorias/{id}</span>
+        <small>Edita uma categoria</small>
+    </div>
+    <div class="endpoint-body collapse" id="collapseput_wswscategorias_id">
+        <div class="parameters-wrapper">
+    <div class="parameters-wrapper-header">
+        <h6>Parameters</h6>
+    </div>
+    <div class="parameters-inner">
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">id (integer) <span class="badge badge-warning">required</span></th>
+                    <td>ID da categoria a ser editada</td>                    
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<div class="request-wrapper">
+    <div class="request-wrapper-header">
+        <h6>Request body <span class="badge badge-warning">required</span></h6>
+    </div>
+    <div class="request-inner">
+        
+        <p>Example Value</p>
+        
+<pre>{
+    "id": 0,
+    "parerent_id": 0,
+    "ativo": 0,
+    "nome": "string",
+    "descricao": "string",
+    "slug": "string",
+    "tag_h1": "string",
+    "meta_title": "string",
+    "meta_keywords": "string",
+    "meta_description": "string",
+    "classes_adicionais": "string"
+}</pre>
+
+    </div>
+</div>
+
+<div class="responses-wrapper">
+    <div class="responses-wrapper-header">
+        <h6>Responses</h6>
+    </div>
+    <div class="responses-inner">
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">200</th>
+                    <td>
+
+                        <pre>sucesso</pre>
+                        
+                        <p>Example Value</p>
+
+<pre>{
+    "result": {
+        "Wscategoria": {
+            "id": 0,
+            "parerent_id": 0,
+            "ativo": 0,
+            "nome": "string",
+            "descricao": "string",
+            "slug": "string",
+            "tag_h1": "string",
+            "meta_title": "string",
+            "meta_keywords": "string",
+            "meta_description": "string",
+            "classes_adicionais": "string"
+        }
+    }
+}</pre>
+
+                    </td>
+                    <td>No links</td>
+                </tr>
+                <tr>
+                    <th scope="row">400</th>
+                    <td><pre>falha</pre></td>
+                    <td>No links</td>
+                </tr>
+            </tbody>
+        </table>
+                  
+    </div>
+</div>
+ 
+ 
+             
+    </div>
+</div>
+
+
+<div class="endpoint DELETE">
+    <div class="endpoint-title" data-toggle="collapse" href="#collapsedelete_wswscategorias_id" role="button" aria-expanded="false" aria-controls="collapsedelete_wswscategorias_id">
+        <a class="btn btn-primary btn-sm" href="#">
+           DELETE
+        </a> 
+        <span class="endpoint-summary-path">/ws/wscategorias/{id}</span>
+        <small>Exclui uma categoria</small>
+    </div>
+    <div class="endpoint-body collapse" id="collapsedelete_wswscategorias_id">
+        <div class="parameters-wrapper">
+    <div class="parameters-wrapper-header">
+        <h6>Parameters</h6>
+    </div>
+    <div class="parameters-inner">
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">id (integer) <span class="badge badge-warning">required</span></th>
+                    <td>ID da categoria a ser excluída</td>                    
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<div class="responses-wrapper">
+    <div class="responses-wrapper-header">
+        <h6>Responses</h6>
+    </div>
+    <div class="responses-inner">
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">200</th>
+                    <td><pre>sucesso</pre></td>
+                    <td>No links</td>
+                </tr>
+                <tr>
+                    <th scope="row">400</th>
+                    <td><pre>falha</pre></td>
+                    <td>No links</td>
+                </tr>
+            </tbody>
+        </table>
+                  
+    </div>
+</div>
+ 
+ 
+             
+    </div>
+</div>
+
+        </div>
+    </div>
+
+
+
+    <div class="entity">
+        <div class="entity-header">
+            <h5>Unidades</h5>
+            <small>Unidades de medida</small>
+            <hr>
+        </div>
+        <div class="entity-body">           
+            
+
+
+<div class="endpoint GET">
+    <div class="endpoint-title" data-toggle="collapse" href="#collapseget_wswsunidades" role="button" aria-expanded="false" aria-controls="collapseget_wswsunidades">
+        <a class="btn btn-primary btn-sm" href="#">
+           GET
+        </a> 
+        <span class="endpoint-summary-path">/ws/wsunidades</span>
+        <small>Retorna todas as unidades de medida</small>
+    </div>
+    <div class="endpoint-body collapse" id="collapseget_wswsunidades">
+        <div class="responses-wrapper">
+    <div class="responses-wrapper-header">
+        <h6>Responses</h6>
+    </div>
+    <div class="responses-inner">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">200</th>
+                    <td>
+
+                        <pre>sucesso</pre>
+                        
+                        <p>Example Value</p>
+
+<pre>{
+    "result": [{
+        "Wsunidade": {
+            "id": 0,
+            "nome": "string",
+            "medida": "string",
+            "paridade": 0,
+            "medida_decimal": "string",
+            "multiplicador": 0,
+            "quantidade_minima": 0
+        }
+    }]
+}</pre>
+
+
+                    </td>
+                    <td>No links</td>
+                </tr>
+                <tr>
+                    <th scope="row">400</th>
+                    <td><pre>falha</pre></td>
+                    <td>No links</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>            
+    </div>
+</div>
+
+
+<div class="endpoint POST">
+    <div class="endpoint-title" data-toggle="collapse" href="#collapsepost_wswsunidades" role="button" aria-expanded="false" aria-controls="collapsepost_wswsunidades">
+        <a class="btn btn-primary btn-sm" href="#">
+           POST
+        </a> 
+        <span class="endpoint-summary-path">/ws/wsunidades</span>
+        <small>Adiciona uma unidade de medida</small>
+    </div>
+    <div class="endpoint-body collapse" id="collapsepost_wswsunidades">
+        <div class="request-wrapper">
+    <div class="request-wrapper-header">
+        <h6>Request body <span class="badge badge-warning">required</span></h6>
+    </div>
+    <div class="request-inner">
+        
+        <p>Example Value</p>
+        
+<pre>{
+  "id": 0,
+  "nome": "string",
+  "medida": "string",
+  "paridade": 0,
+  "medida_decimal": "string",
+  "multiplicador": 0,
+  "quantidade_minima": 0
+}</pre>
+
+    </div>
+</div>
+
+<div class="responses-wrapper">
+    <div class="responses-wrapper-header">
+        <h6>Responses</h6>
+    </div>
+    <div class="responses-inner">
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">200</th>
+                    <td>
+
+                        <pre>sucesso</pre>
+                        
+                        <p>Example Value</p>
+
+<pre>{
+  "result": {
+    "Wsunidade": {
+      "id": 0,
+      "nome": "string",
+      "medida": "string",
+      "paridade": 0,
+      "medida_decimal": "string",
+      "multiplicador": 0,
+      "quantidade_minima": 0
+    }
+  }
+}</pre>
+
+                    </td>
+                    <td>No links</td>
+                </tr>
+                <tr>
+                    <th scope="row">400</th>
+                    <td><pre>falha</pre></td>
+                    <td>No links</td>
+                </tr>
+            </tbody>
+        </table>
+                  
+    </div>
+</div>
+ 
+ 
+             
+    </div>
+</div>
+
+
+<div class="endpoint GET">
+    <div class="endpoint-title" data-toggle="collapse" href="#collapseget_wswsunidades_id" role="button" aria-expanded="false" aria-controls="collapseget_wswsunidades_id">
+        <a class="btn btn-primary btn-sm" href="#">
+           GET
+        </a> 
+        <span class="endpoint-summary-path">/ws/wsunidades/{id}</span>
+        <small>Localiza uma unidade de medida</small>
+    </div>
+    <div class="endpoint-body collapse" id="collapseget_wswsunidades_id">
+        <div class="parameters-wrapper">
+    <div class="parameters-wrapper-header">
+        <h6>Parameters</h6>
+    </div>
+    <div class="parameters-inner">
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">id (integer) <span class="badge badge-warning">required</span></th>
+                    <td>ID da unidade de medida a ser localizada</td>                    
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<div class="responses-wrapper">
+    <div class="responses-wrapper-header">
+        <h6>Responses</h6>
+    </div>
+    <div class="responses-inner">
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">200</th>
+                    <td>
+
+                        <pre>sucesso</pre>
+                        
+                        <p>Example Value</p>
+
+<pre>{
+  "result": {
+    "Wsunidade": {
+      "id": 0,
+      "nome": "string",
+      "medida": "string",
+      "paridade": 0,
+      "medida_decimal": "string",
+      "multiplicador": 0,
+      "quantidade_minima": 0
+    }
+  }
+}</pre>
+
+                    </td>
+                    <td>No links</td>
+                </tr>
+                <tr>
+                    <th scope="row">400</th>
+                    <td><pre>falha</pre></td>
+                    <td>No links</td>
+                </tr>
+            </tbody>
+        </table>
+                  
+    </div>
+</div>
+ 
+ 
+             
+    </div>
+</div>
+
+
+<div class="endpoint PUT">
+    <div class="endpoint-title" data-toggle="collapse" href="#collapseput_wswsunidades_id" role="button" aria-expanded="false" aria-controls="collapseput_wswsunidades_id">
+        <a class="btn btn-primary btn-sm" href="#">
+           PUT
+        </a> 
+        <span class="endpoint-summary-path">/ws/wsunidades/{id}</span>
+        <small>Edita uma unidade de medida</small>
+    </div>
+    <div class="endpoint-body collapse" id="collapseput_wswsunidades_id">
+        <div class="parameters-wrapper">
+    <div class="parameters-wrapper-header">
+        <h6>Parameters</h6>
+    </div>
+    <div class="parameters-inner">
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">id (integer) <span class="badge badge-warning">required</span></th>
+                    <td>ID da unidade de medida a ser editada</td>                    
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<div class="request-wrapper">
+    <div class="request-wrapper-header">
+        <h6>Request body <span class="badge badge-warning">required</span></h6>
+    </div>
+    <div class="request-inner">
+        
+        <p>Example Value</p>
+        
+<pre>{
+  "id": 0,
+  "nome": "string",
+  "medida": "string",
+  "paridade": 0,
+  "medida_decimal": "string",
+  "multiplicador": 0,
+  "quantidade_minima": 0
+}</pre>
+
+    </div>
+</div>
+
+<div class="responses-wrapper">
+    <div class="responses-wrapper-header">
+        <h6>Responses</h6>
+    </div>
+    <div class="responses-inner">
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">200</th>
+                    <td>
+
+                        <pre>sucesso</pre>
+                        
+                        <p>Example Value</p>
+
+<pre>{
+  "result": {
+    "Wsunidade": {
+      "id": 0,
+      "nome": "string",
+      "medida": "string",
+      "paridade": 0,
+      "medida_decimal": "string",
+      "multiplicador": 0,
+      "quantidade_minima": 0
+    }
+  }
+}</pre>
+
+                    </td>
+                    <td>No links</td>
+                </tr>
+                <tr>
+                    <th scope="row">400</th>
+                    <td><pre>falha</pre></td>
+                    <td>No links</td>
+                </tr>
+            </tbody>
+        </table>
+                  
+    </div>
+</div>
+ 
+ 
+             
+    </div>
+</div>
+
+
+<div class="endpoint DELETE">
+    <div class="endpoint-title" data-toggle="collapse" href="#collapsedelete_wswsunidades_id" role="button" aria-expanded="false" aria-controls="collapsedelete_wswsunidades_id">
+        <a class="btn btn-primary btn-sm" href="#">
+           DELETE
+        </a> 
+        <span class="endpoint-summary-path">/ws/wsunidades/{id}</span>
+        <small>Exclui uma unidade de medida</small>
+    </div>
+    <div class="endpoint-body collapse" id="collapsedelete_wswsunidades_id">
+        <div class="parameters-wrapper">
+    <div class="parameters-wrapper-header">
+        <h6>Parameters</h6>
+    </div>
+    <div class="parameters-inner">
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">id (integer) <span class="badge badge-warning">required</span></th>
+                    <td>ID da unidade de medida a ser excluída</td>                    
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<div class="responses-wrapper">
+    <div class="responses-wrapper-header">
+        <h6>Responses</h6>
+    </div>
+    <div class="responses-inner">
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">200</th>
+                    <td><pre>sucesso</pre></td>
+                    <td>No links</td>
+                </tr>
+                <tr>
+                    <th scope="row">400</th>
+                    <td><pre>falha</pre></td>
+                    <td>No links</td>
+                </tr>
+            </tbody>
+        </table>
+                  
+    </div>
+</div>
+ 
+ 
+             
+    </div>
+</div>
+
+        </div>
+    </div>
+
+
+
+    <div class="entity">
+        <div class="entity-header">
+            <h5>Marcas</h5>
+            <small>Marcas de produtos</small>
+            <hr>
+        </div>
+        <div class="entity-body">           
+            
+
+
+<div class="endpoint GET">
+    <div class="endpoint-title" data-toggle="collapse" href="#collapseget_wswsmarcas" role="button" aria-expanded="false" aria-controls="collapseget_wswsmarcas">
+        <a class="btn btn-primary btn-sm" href="#">
+           GET
+        </a> 
+        <span class="endpoint-summary-path">/ws/wsmarcas</span>
+        <small>Retorna todas as marcas</small>
+    </div>
+    <div class="endpoint-body collapse" id="collapseget_wswsmarcas">
+        <div class="responses-wrapper">
+    <div class="responses-wrapper-header">
+        <h6>Responses</h6>
+    </div>
+    <div class="responses-inner">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">200</th>
+                    <td>
+
+                        <pre>sucesso</pre>
+                        
+                        <p>Example Value</p>
+
+<pre>{
+  "result": [
+    {
+      "Wsmarca": {
+        "id": 0,
+        "ativo": 0,
+        "exibe_vitrine": 0,
+        "nome": "string",
+        "slug": "string",
+        "descricao": "string",
+        "tag_h1": "string",
+        "meta_title": "string",
+        "meta_description": "string",
+        "meta_keywords": "string",
+        "imagem": "string"
+      }
+    }
+  ]
+}</pre>
+
+
+                    </td>
+                    <td>No links</td>
+                </tr>
+                <tr>
+                    <th scope="row">400</th>
+                    <td><pre>falha</pre></td>
+                    <td>No links</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>            
+    </div>
+</div>
+
+
+<div class="endpoint POST">
+    <div class="endpoint-title" data-toggle="collapse" href="#collapsepost_wswsmarcas" role="button" aria-expanded="false" aria-controls="collapsepost_wswsmarcas">
+        <a class="btn btn-primary btn-sm" href="#">
+           POST
+        </a> 
+        <span class="endpoint-summary-path">/ws/wsmarcas</span>
+        <small>Adiciona uma marca</small>
+    </div>
+    <div class="endpoint-body collapse" id="collapsepost_wswsmarcas">
+        <div class="request-wrapper">
+    <div class="request-wrapper-header">
+        <h6>Request body <span class="badge badge-warning">required</span></h6>
+    </div>
+    <div class="request-inner">
+        
+        <p>Example Value</p>
+        
+<pre>{
+  "id": 0,
+  "ativo": 0,
+  "exibe_vitrine": 0,
+  "nome": "string",
+  "slug": "string",
+  "descricao": "string",
+  "tag_h1": "string",
+  "meta_title": "string",
+  "meta_description": "string",
+  "meta_keywords": "string",
+  "imagem": "string"
+}</pre>
+
+    </div>
+</div>
+
+<div class="responses-wrapper">
+    <div class="responses-wrapper-header">
+        <h6>Responses</h6>
+    </div>
+    <div class="responses-inner">
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">200</th>
+                    <td>
+
+                        <pre>sucesso</pre>
+                        
+                        <p>Example Value</p>
+
+<pre>{
+  "result": {
+    "Wsmarca": {
+      "id": 0,
+      "ativo": 0,
+      "exibe_vitrine": 0,
+      "nome": "string",
+      "slug": "string",
+      "descricao": "string",
+      "tag_h1": "string",
+      "meta_title": "string",
+      "meta_description": "string",
+      "meta_keywords": "string",
+      "imagem": "string"
+    }
+  }
+}</pre>
+
+                    </td>
+                    <td>No links</td>
+                </tr>
+                <tr>
+                    <th scope="row">400</th>
+                    <td><pre>falha</pre></td>
+                    <td>No links</td>
+                </tr>
+            </tbody>
+        </table>
+                  
+    </div>
+</div>
+ 
+ 
+             
+    </div>
+</div>
+
+
+<div class="endpoint GET">
+    <div class="endpoint-title" data-toggle="collapse" href="#collapseget_wswsmarcas_id" role="button" aria-expanded="false" aria-controls="collapseget_wswsmarcas_id">
+        <a class="btn btn-primary btn-sm" href="#">
+           GET
+        </a> 
+        <span class="endpoint-summary-path">/ws/wsmarcas/{id}</span>
+        <small>Localiza uma marca</small>
+    </div>
+    <div class="endpoint-body collapse" id="collapseget_wswsmarcas_id">
+        <div class="parameters-wrapper">
+    <div class="parameters-wrapper-header">
+        <h6>Parameters</h6>
+    </div>
+    <div class="parameters-inner">
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">id (integer) <span class="badge badge-warning">required</span></th>
+                    <td>ID da marca a ser localizada</td>                    
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<div class="responses-wrapper">
+    <div class="responses-wrapper-header">
+        <h6>Responses</h6>
+    </div>
+    <div class="responses-inner">
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">200</th>
+                    <td>
+
+                        <pre>sucesso</pre>
+                        
+                        <p>Example Value</p>
+
+<pre>{
+  "result": {
+    "Wsmarca": {
+      "id": 0,
+      "ativo": 0,
+      "exibe_vitrine": 0,
+      "nome": "string",
+      "slug": "string",
+      "descricao": "string",
+      "tag_h1": "string",
+      "meta_title": "string",
+      "meta_description": "string",
+      "meta_keywords": "string",
+      "imagem": "string"
+    }
+  }
+}</pre>
+
+                    </td>
+                    <td>No links</td>
+                </tr>
+                <tr>
+                    <th scope="row">400</th>
+                    <td><pre>falha</pre></td>
+                    <td>No links</td>
+                </tr>
+            </tbody>
+        </table>
+                  
+    </div>
+</div>
+ 
+ 
+             
+    </div>
+</div>
+
+
+<div class="endpoint PUT">
+    <div class="endpoint-title" data-toggle="collapse" href="#collapseput_wswsmarcas_id" role="button" aria-expanded="false" aria-controls="collapseput_wswsmarcas_id">
+        <a class="btn btn-primary btn-sm" href="#">
+           PUT
+        </a> 
+        <span class="endpoint-summary-path">/ws/wsmarcas/{id}</span>
+        <small>Edita uma marca</small>
+    </div>
+    <div class="endpoint-body collapse" id="collapseput_wswsmarcas_id">
+        <div class="parameters-wrapper">
+    <div class="parameters-wrapper-header">
+        <h6>Parameters</h6>
+    </div>
+    <div class="parameters-inner">
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">id (integer) <span class="badge badge-warning">required</span></th>
+                    <td>ID da marca a ser editada</td>                    
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<div class="request-wrapper">
+    <div class="request-wrapper-header">
+        <h6>Request body <span class="badge badge-warning">required</span></h6>
+    </div>
+    <div class="request-inner">
+        
+        <p>Example Value</p>
+        
+<pre>{
+  "id": 0,
+  "ativo": 0,
+  "exibe_vitrine": 0,
+  "nome": "string",
+  "slug": "string",
+  "descricao": "string",
+  "tag_h1": "string",
+  "meta_title": "string",
+  "meta_description": "string",
+  "meta_keywords": "string",
+  "imagem": "string"
+}</pre>
+
+    </div>
+</div>
+
+<div class="responses-wrapper">
+    <div class="responses-wrapper-header">
+        <h6>Responses</h6>
+    </div>
+    <div class="responses-inner">
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">200</th>
+                    <td>
+
+                        <pre>sucesso</pre>
+                        
+                        <p>Example Value</p>
+
+<pre>{
+  "result": {
+    "Wsmarca": {
+      "id": 0,
+      "nome": "string",
+      "medida": "string",
+      "paridade": 0,
+      "medida_decimal": "string",
+      "multiplicador": 0,
+      "quantidade_minima": 0
+    }
+  }
+}}</pre>
+
+                    </td>
+                    <td>No links</td>
+                </tr>
+                <tr>
+                    <th scope="row">400</th>
+                    <td><pre>falha</pre></td>
+                    <td>No links</td>
+                </tr>
+            </tbody>
+        </table>
+                  
+    </div>
+</div>
+ 
+ 
+             
+    </div>
+</div>
+
+
+<div class="endpoint DELETE">
+    <div class="endpoint-title" data-toggle="collapse" href="#collapsedelete_wswsmarcas_id" role="button" aria-expanded="false" aria-controls="collapsedelete_wswsmarcas_id">
+        <a class="btn btn-primary btn-sm" href="#">
+           DELETE
+        </a> 
+        <span class="endpoint-summary-path">/ws/wsmarcas/{id}</span>
+        <small>Exclui uma marca</small>
+    </div>
+    <div class="endpoint-body collapse" id="collapsedelete_wswsmarcas_id">
+        <div class="parameters-wrapper">
+    <div class="parameters-wrapper-header">
+        <h6>Parameters</h6>
+    </div>
+    <div class="parameters-inner">
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">id (integer) <span class="badge badge-warning">required</span></th>
+                    <td>ID da marca a ser excluída</td>                    
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<div class="responses-wrapper">
+    <div class="responses-wrapper-header">
+        <h6>Responses</h6>
+    </div>
+    <div class="responses-inner">
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">200</th>
+                    <td><pre>sucesso</pre></td>
+                    <td>No links</td>
+                </tr>
+                <tr>
+                    <th scope="row">400</th>
+                    <td><pre>falha</pre></td>
+                    <td>No links</td>
+                </tr>
+            </tbody>
+        </table>
+                  
+    </div>
+</div>
+ 
+ 
+             
+    </div>
+</div>
+
+        </div>
+    </div>
+
+
+
+    <div class="entity">
+        <div class="entity-header">
+            <h5>Combinações</h5>
+            <small>Combinações de produtos</small>
+            <hr>
+        </div>
+        <div class="entity-body">           
+            
+
+
+<div class="endpoint GET">
+    <div class="endpoint-title" data-toggle="collapse" href="#collapseget_wswscombinacoes" role="button" aria-expanded="false" aria-controls="collapseget_wswscombinacoes">
+        <a class="btn btn-primary btn-sm" href="#">
+           GET
+        </a> 
+        <span class="endpoint-summary-path">/ws/wscombinacoes</span>
+        <small>Retorna todas as combinações</small>
+    </div>
+    <div class="endpoint-body collapse" id="collapseget_wswscombinacoes">
+        <div class="responses-wrapper">
+    <div class="responses-wrapper-header">
+        <h6>Responses</h6>
+    </div>
+    <div class="responses-inner">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">200</th>
+                    <td>
+
+                        <pre>sucesso</pre>
+                        
+                        <p>Example Value</p>
+
+<pre>{
+  "result": [
+    {
+      "Wscombinacao": {
+        "id": 0,
+        "nome": "string",
+        "label": "string",
+        "mostra_vitrine": 0,
+        "ordem": 0,
+        "classes_adicionais": "string"
+      },
+      "WscombinacaoAtributo": {
+        "id": 0,
+        "nome": "string",
+        "tipo_capa": "string",
+        "cor_primaria": "string",
+        "cor_secundaria": "string",
+        "ordem": 0,
+        "combinacao_id": 0,
+        "imagem": "string"
+      }
+    }
+  ]
+}</pre>
+
+
+                    </td>
+                    <td>No links</td>
+                </tr>
+                <tr>
+                    <th scope="row">400</th>
+                    <td><pre>falha</pre></td>
+                    <td>No links</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>            
+    </div>
+</div>
+
+
+<div class="endpoint POST">
+    <div class="endpoint-title" data-toggle="collapse" href="#collapsepost_wswscombinacoes" role="button" aria-expanded="false" aria-controls="collapsepost_wswscombinacoes">
+        <a class="btn btn-primary btn-sm" href="#">
+           POST
+        </a> 
+        <span class="endpoint-summary-path">/ws/wscombinacoes</span>
+        <small>Adiciona uma combinação</small>
+    </div>
+    <div class="endpoint-body collapse" id="collapsepost_wswscombinacoes">
+        <div class="request-wrapper">
+    <div class="request-wrapper-header">
+        <h6>Request body <span class="badge badge-warning">required</span></h6>
+    </div>
+    <div class="request-inner">
+        
+        <p>Example Value</p>
+        
+<pre>{
+  "Wscombinacao": {
+    "id": 0,
+    "nome": "string",
+    "label": "string",
+    "mostra_vitrine": 0,
+    "ordem": 0,
+    "classes_adicionais": "string"
+  },
+  "WscombinacaoAtributo": {
+    "id": 0,
+    "nome": "string",
+    "tipo_capa": "string",
+    "cor_primaria": "string",
+    "cor_secundaria": "string",
+    "ordem": 0,
+    "combinacao_id": 0,
+    "imagem": "string"
+  }
+}</pre>
+
+    </div>
+</div>
+
+<div class="responses-wrapper">
+    <div class="responses-wrapper-header">
+        <h6>Responses</h6>
+    </div>
+    <div class="responses-inner">
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">200</th>
+                    <td>
+
+                        <pre>sucesso</pre>
+                        
+                        <p>Example Value</p>
+
+<pre>{
+  "result": {
+    "Wscombinacao": {
+      "id": 0,
+      "nome": "string",
+      "label": "string",
+      "mostra_vitrine": 0,
+      "ordem": 0,
+      "classes_adicionais": "string"
+    },
+    "WscombinacaoAtributo": {
+      "id": 0,
+      "nome": "string",
+      "tipo_capa": "string",
+      "cor_primaria": "string",
+      "cor_secundaria": "string",
+      "ordem": 0,
+      "combinacao_id": 0,
+      "imagem": "string"
+    }
+  }
+}</pre>
+
+                    </td>
+                    <td>No links</td>
+                </tr>
+                <tr>
+                    <th scope="row">400</th>
+                    <td><pre>falha</pre></td>
+                    <td>No links</td>
+                </tr>
+            </tbody>
+        </table>
+                  
+    </div>
+</div>
+ 
+ 
+             
+    </div>
+</div>
+
+
+<div class="endpoint GET">
+    <div class="endpoint-title" data-toggle="collapse" href="#collapseget_wswscombinacoes_id" role="button" aria-expanded="false" aria-controls="collapseget_wswscombinacoes_id">
+        <a class="btn btn-primary btn-sm" href="#">
+           GET
+        </a> 
+        <span class="endpoint-summary-path">/ws/wscombinacoes/{id}</span>
+        <small>Localiza uma combinação</small>
+    </div>
+    <div class="endpoint-body collapse" id="collapseget_wswscombinacoes_id">
+        <div class="parameters-wrapper">
+    <div class="parameters-wrapper-header">
+        <h6>Parameters</h6>
+    </div>
+    <div class="parameters-inner">
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">id (integer) <span class="badge badge-warning">required</span></th>
+                    <td>ID da combinação a ser localizada</td>                    
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<div class="responses-wrapper">
+    <div class="responses-wrapper-header">
+        <h6>Responses</h6>
+    </div>
+    <div class="responses-inner">
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">200</th>
+                    <td>
+
+                        <pre>sucesso</pre>
+                        
+                        <p>Example Value</p>
+
+<pre>{
+  "result": {
+    "Wscombinacao": {
+      "id": 0,
+      "nome": "string",
+      "label": "string",
+      "mostra_vitrine": 0,
+      "ordem": 0,
+      "classes_adicionais": "string"
+    },
+    "WscombinacaoAtributo": {
+      "id": 0,
+      "nome": "string",
+      "tipo_capa": "string",
+      "cor_primaria": "string",
+      "cor_secundaria": "string",
+      "ordem": 0,
+      "combinacao_id": 0,
+      "imagem": "string"
+    }
+  }
+}</pre>
+
+                    </td>
+                    <td>No links</td>
+                </tr>
+                <tr>
+                    <th scope="row">400</th>
+                    <td><pre>falha</pre></td>
+                    <td>No links</td>
+                </tr>
+            </tbody>
+        </table>
+                  
+    </div>
+</div>
+ 
+ 
+             
+    </div>
+</div>
+
+
+<div class="endpoint PUT">
+    <div class="endpoint-title" data-toggle="collapse" href="#collapseput_wswscombinacoes_id" role="button" aria-expanded="false" aria-controls="collapseput_wswscombinacoes_id">
+        <a class="btn btn-primary btn-sm" href="#">
+           PUT
+        </a> 
+        <span class="endpoint-summary-path">/ws/wscombinacoes/{id}</span>
+        <small>Edita uma combinação</small>
+    </div>
+    <div class="endpoint-body collapse" id="collapseput_wswscombinacoes_id">
+        <div class="parameters-wrapper">
+    <div class="parameters-wrapper-header">
+        <h6>Parameters</h6>
+    </div>
+    <div class="parameters-inner">
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">id (integer) <span class="badge badge-warning">required</span></th>
+                    <td>ID da combinação a ser editada</td>                    
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<div class="request-wrapper">
+    <div class="request-wrapper-header">
+        <h6>Request body <span class="badge badge-warning">required</span></h6>
+    </div>
+    <div class="request-inner">
+        
+        <p>Example Value</p>
+        
+<pre>{
+  "Wscombinacao": {
+    "id": 0,
+    "nome": "string",
+    "label": "string",
+    "mostra_vitrine": 0,
+    "ordem": 0,
+    "classes_adicionais": "string"
+  },
+  "WscombinacaoAtributo": {
+    "id": 0,
+    "nome": "string",
+    "tipo_capa": "string",
+    "cor_primaria": "string",
+    "cor_secundaria": "string",
+    "ordem": 0,
+    "combinacao_id": 0,
+    "imagem": "string"
+  }
+}</pre>
+
+    </div>
+</div>
+
+<div class="responses-wrapper">
+    <div class="responses-wrapper-header">
+        <h6>Responses</h6>
+    </div>
+    <div class="responses-inner">
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">200</th>
+                    <td>
+
+                        <pre>sucesso</pre>
+                        
+                        <p>Example Value</p>
+
+<pre>{
+  "result": {
+    "Wscombinacao": {
+      "id": 0,
+      "nome": "string",
+      "label": "string",
+      "mostra_vitrine": 0,
+      "ordem": 0,
+      "classes_adicionais": "string"
+    },
+    "WscombinacaoAtributo": {
+      "id": 0,
+      "nome": "string",
+      "tipo_capa": "string",
+      "cor_primaria": "string",
+      "cor_secundaria": "string",
+      "ordem": 0,
+      "combinacao_id": 0,
+      "imagem": "string"
+    }
+  }
+}</pre>
+
+                    </td>
+                    <td>No links</td>
+                </tr>
+                <tr>
+                    <th scope="row">400</th>
+                    <td><pre>falha</pre></td>
+                    <td>No links</td>
+                </tr>
+            </tbody>
+        </table>
+                  
+    </div>
+</div>
+ 
+ 
+             
+    </div>
+</div>
+
+
+<div class="endpoint DELETE">
+    <div class="endpoint-title" data-toggle="collapse" href="#collapsedelete_wswscombinacoes_id" role="button" aria-expanded="false" aria-controls="collapsedelete_wswscombinacoes_id">
+        <a class="btn btn-primary btn-sm" href="#">
+           DELETE
+        </a> 
+        <span class="endpoint-summary-path">/ws/wscombinacoes/{id}</span>
+        <small>Exclui uma combinação</small>
+    </div>
+    <div class="endpoint-body collapse" id="collapsedelete_wswscombinacoes_id">
+        <div class="parameters-wrapper">
+    <div class="parameters-wrapper-header">
+        <h6>Parameters</h6>
+    </div>
+    <div class="parameters-inner">
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">id (integer) <span class="badge badge-warning">required</span></th>
+                    <td>ID da combinação a ser excluída</td>                    
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<div class="responses-wrapper">
+    <div class="responses-wrapper-header">
+        <h6>Responses</h6>
+    </div>
+    <div class="responses-inner">
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">200</th>
+                    <td><pre>sucesso</pre></td>
+                    <td>No links</td>
+                </tr>
+                <tr>
+                    <th scope="row">400</th>
+                    <td><pre>falha</pre></td>
+                    <td>No links</td>
+                </tr>
+            </tbody>
+        </table>
+                  
+    </div>
+</div>
+ 
+ 
+             
+    </div>
+</div>
+
+        </div>
+    </div>
+
+
+
+    <div class="entity">
+        <div class="entity-header">
+            <h5>Produtos</h5>
+            <small>Produtos cadastrados</small>
+            <hr>
+        </div>
+        <div class="entity-body">           
+            
+
+
+<div class="endpoint GET">
+    <div class="endpoint-title" data-toggle="collapse" href="#collapseget_wswsprodutos" role="button" aria-expanded="false" aria-controls="collapseget_wswsprodutos">
+        <a class="btn btn-primary btn-sm" href="#">
+           GET
+        </a> 
+        <span class="endpoint-summary-path">/ws/wsprodutos</span>
+        <small>Retorna todos os produtos</small>
+    </div>
+    <div class="endpoint-body collapse" id="collapseget_wswsprodutos">
+        <div class="responses-wrapper">
+    <div class="responses-wrapper-header">
+        <h6>Responses</h6>
+    </div>
+    <div class="responses-inner">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">200</th>
+                    <td>
+
+                        <pre>sucesso</pre>
+                        
+                        <p>Example Value</p>
+
+<pre>{
+  "result": [
+    {
+      "Wsproduto": {
+        "id": 0,
+        "tipo_cadastro": 0,
+        "situacao": 0,
+        "nome": "string",
+        "nome_meli": "string",
+        "descricao": "string",
+        "marca_id": 0,
+        "unidade_medida_id": 0,
+        "disponivel": 0,
+        "vitrine": 0,
+        "promo": 0,
+        "lancamento": 0,
+        "lancamento_data_fim": "string",
+        "frete_gratis": 0,
+        "cotacao": 0,
+        "loja_fisica": 0,
+        "origem_mercadoria": 0,
+        "tempo_producao": 0,
+        "ncm": "string",
+        "ean": "string",
+        "video": "string",
+        "slug": "string",
+        "tag_h1": "string",
+        "meta_title": "string",
+        "meta_keywords": "string",
+        "meta_description": "string",
+        "sku": "string",
+        "sku_fornecedor": "string",
+        "avaliacoes": 0,
+        "isbn": "string",
+        "quantidade_venda": 0
+      },
+      "WsprodutoImagem": [
+        {
+          "id": 0,
+          "produto_id": 0,
+          "principal": 0,
+          "ordem": 0,
+          "migracao_id": "string",
+          "imagem": "string"
+        }
+      ],
+      "WsprodutoEstoque": [
+        {
+          "id": 0,
+          "produto_id": 0,
+          "sku": "string",
+          "sku_fornecedor": "string",
+          "quantidade": 0,
+          "valor_compra": 0,
+          "valor_venda": 0,
+          "promocao": 0,
+          "percentual_promocao": 0,
+          "valor_promocao": 0,
+          "promocao_data_inicio": "string",
+          "promocao_data_fim": "string",
+          "compra_minima": 0,
+          "compra_maxima": 0,
+          "estoque_minimo": 0,
+          "altura": 0,
+          "largura": 0,
+          "comprimento": 0,
+          "peso_liquido": 0,
+          "combinacao1_id": 0,
+          "combinacao_atributo1_id": 0,
+          "combinacao2_id": 0,
+          "combinacao_atributo2_id": 0,
+          "combinacao3_id": 0,
+          "combinacao_atributo3_id": 0,
+          "quantidade_venda": 0,
+          "valor_frete": 0,
+          "valor_frete_adicional": 0
+        }
+      ],
+      "WsprodutoCategoria": [
+        {
+          "categoria_id": 0,
+          "principal": 0,
+          "produto_id": 0
+        }
+      ]
+    }
+  ]
+}</pre>
+
+
+                    </td>
+                    <td>No links</td>
+                </tr>
+                <tr>
+                    <th scope="row">400</th>
+                    <td><pre>falha</pre></td>
+                    <td>No links</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>            
+    </div>
+</div>
+
+
+<div class="endpoint POST">
+    <div class="endpoint-title" data-toggle="collapse" href="#collapsepost_wswsprodutos" role="button" aria-expanded="false" aria-controls="collapsepost_wswsprodutos">
+        <a class="btn btn-primary btn-sm" href="#">
+           POST
+        </a> 
+        <span class="endpoint-summary-path">/ws/wsprodutos</span>
+        <small>Adiciona um produto</small>
+    </div>
+    <div class="endpoint-body collapse" id="collapsepost_wswsprodutos">
+        <div class="request-wrapper">
+    <div class="request-wrapper-header">
+        <h6>Request body <span class="badge badge-warning">required</span></h6>
+    </div>
+    <div class="request-inner">
+        
+        <p>Example Value</p>
+        
+<pre>{
+  "Wsproduto": {
+    "id": 0,
+    "tipo_cadastro": 0,
+    "situacao": 0,
+    "nome": "string",
+    "nome_meli": "string",
+    "descricao": "string",
+    "marca_id": 0,
+    "unidade_medida_id": 0,
+    "disponivel": 0,
+    "vitrine": 0,
+    "promo": 0,
+    "lancamento": 0,
+    "lancamento_data_fim": "string",
+    "frete_gratis": 0,
+    "cotacao": 0,
+    "loja_fisica": 0,
+    "origem_mercadoria": 0,
+    "tempo_producao": 0,
+    "ncm": "string",
+    "ean": "string",
+    "video": "string",
+    "slug": "string",
+    "tag_h1": "string",
+    "meta_title": "string",
+    "meta_keywords": "string",
+    "meta_description": "string",
+    "sku": "string",
+    "sku_fornecedor": "string",
+    "avaliacoes": 0,
+    "isbn": "string",
+    "quantidade_venda": 0
+  },
+  "WsprodutoImagem": {
+    "id": 0,
+    "produto_id": 0,
+    "principal": 0,
+    "ordem": 0,
+    "migracao_id": "string",
+    "imagem": "string"
+  },
+  "WsprodutoEstoque": {
+    "id": 0,
+    "produto_id": 0,
+    "sku": "string",
+    "sku_fornecedor": "string",
+    "quantidade": 0,
+    "valor_compra": 0,
+    "valor_venda": 0,
+    "promocao": 0,
+    "percentual_promocao": 0,
+    "valor_promocao": 0,
+    "promocao_data_inicio": "string",
+    "promocao_data_fim": "string",
+    "compra_minima": 0,
+    "compra_maxima": 0,
+    "estoque_minimo": 0,
+    "altura": 0,
+    "largura": 0,
+    "comprimento": 0,
+    "peso_liquido": 0,
+    "combinacao1_id": 0,
+    "combinacao_atributo1_id": 0,
+    "combinacao2_id": 0,
+    "combinacao_atributo2_id": 0,
+    "combinacao3_id": 0,
+    "combinacao_atributo3_id": 0,
+    "quantidade_venda": 0,
+    "valor_frete": 0,
+    "valor_frete_adicional": 0
+  },
+  "WsprodutoCategoria": {
+    "categoria_id": 0,
+    "principal": 0,
+    "produto_id": 0
+  }
+}</pre>
+
+    </div>
+</div>
+
+<div class="responses-wrapper">
+    <div class="responses-wrapper-header">
+        <h6>Responses</h6>
+    </div>
+    <div class="responses-inner">
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">200</th>
+                    <td>
+
+                        <pre>sucesso</pre>
+                        
+                        <p>Example Value</p>
+
+<pre>{
+  "result": {
+    "Wsproduto": {
+      "id": 0,
+      "tipo_cadastro": 0,
+      "situacao": 0,
+      "nome": "string",
+      "nome_meli": "string",
+      "descricao": "string",
+      "marca_id": 0,
+      "unidade_medida_id": 0,
+      "disponivel": 0,
+      "vitrine": 0,
+      "promo": 0,
+      "lancamento": 0,
+      "lancamento_data_fim": "string",
+      "frete_gratis": 0,
+      "cotacao": 0,
+      "loja_fisica": 0,
+      "origem_mercadoria": 0,
+      "tempo_producao": 0,
+      "ncm": "string",
+      "ean": "string",
+      "video": "string",
+      "slug": "string",
+      "tag_h1": "string",
+      "meta_title": "string",
+      "meta_keywords": "string",
+      "meta_description": "string",
+      "sku": "string",
+      "sku_fornecedor": "string",
+      "avaliacoes": 0,
+      "isbn": "string",
+      "quantidade_venda": 0
+    },
+    "WsprodutoImagem": [
+      {
+        "id": 0,
+        "produto_id": 0,
+        "principal": 0,
+        "ordem": 0,
+        "migracao_id": "string",
+        "imagem": "string"
+      }
+    ],
+    "WsprodutoEstoque": [
+      {
+        "id": 0,
+        "produto_id": 0,
+        "sku": "string",
+        "sku_fornecedor": "string",
+        "quantidade": 0,
+        "valor_compra": 0,
+        "valor_venda": 0,
+        "promocao": 0,
+        "percentual_promocao": 0,
+        "valor_promocao": 0,
+        "promocao_data_inicio": "string",
+        "promocao_data_fim": "string",
+        "compra_minima": 0,
+        "compra_maxima": 0,
+        "estoque_minimo": 0,
+        "altura": 0,
+        "largura": 0,
+        "comprimento": 0,
+        "peso_liquido": 0,
+        "combinacao1_id": 0,
+        "combinacao_atributo1_id": 0,
+        "combinacao2_id": 0,
+        "combinacao_atributo2_id": 0,
+        "combinacao3_id": 0,
+        "combinacao_atributo3_id": 0,
+        "quantidade_venda": 0,
+        "valor_frete": 0,
+        "valor_frete_adicional": 0
+      }
+    ],
+    "WsprodutoCategoria": [
+      {
+        "categoria_id": 0,
+        "principal": 0,
+        "produto_id": 0
+      }
+    ]
+  }
+}</pre>
+
+                    </td>
+                    <td>No links</td>
+                </tr>
+                <tr>
+                    <th scope="row">400</th>
+                    <td><pre>falha</pre></td>
+                    <td>No links</td>
+                </tr>
+            </tbody>
+        </table>
+                  
+    </div>
+</div>
+ 
+ 
+             
+    </div>
+</div>
+
+
+<div class="endpoint GET">
+    <div class="endpoint-title" data-toggle="collapse" href="#collapseget_wswsprodutos_id" role="button" aria-expanded="false" aria-controls="collapseget_wswsprodutos_id">
+        <a class="btn btn-primary btn-sm" href="#">
+           GET
+        </a> 
+        <span class="endpoint-summary-path">/ws/wsprodutos/{id}</span>
+        <small>Localiza um produto</small>
+    </div>
+    <div class="endpoint-body collapse" id="collapseget_wswsprodutos_id">
+        <div class="parameters-wrapper">
+    <div class="parameters-wrapper-header">
+        <h6>Parameters</h6>
+    </div>
+    <div class="parameters-inner">
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">id (integer) <span class="badge badge-warning">required</span></th>
+                    <td>ID do produto a ser localizada</td>                    
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<div class="responses-wrapper">
+    <div class="responses-wrapper-header">
+        <h6>Responses</h6>
+    </div>
+    <div class="responses-inner">
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">200</th>
+                    <td>
+
+                        <pre>sucesso</pre>
+                        
+                        <p>Example Value</p>
+
+<pre>{
+  "result": {
+    "Wsproduto": {
+      "id": 0,
+      "tipo_cadastro": 0,
+      "situacao": 0,
+      "nome": "string",
+      "nome_meli": "string",
+      "descricao": "string",
+      "marca_id": 0,
+      "unidade_medida_id": 0,
+      "disponivel": 0,
+      "vitrine": 0,
+      "promo": 0,
+      "lancamento": 0,
+      "lancamento_data_fim": "string",
+      "frete_gratis": 0,
+      "cotacao": 0,
+      "loja_fisica": 0,
+      "origem_mercadoria": 0,
+      "tempo_producao": 0,
+      "ncm": "string",
+      "ean": "string",
+      "video": "string",
+      "slug": "string",
+      "tag_h1": "string",
+      "meta_title": "string",
+      "meta_keywords": "string",
+      "meta_description": "string",
+      "sku": "string",
+      "sku_fornecedor": "string",
+      "avaliacoes": 0,
+      "isbn": "string",
+      "quantidade_venda": 0
+    },
+    "WsprodutoImagem": [
+      {
+        "id": 0,
+        "produto_id": 0,
+        "principal": 0,
+        "ordem": 0,
+        "migracao_id": "string",
+        "imagem": "string"
+      }
+    ],
+    "WsprodutoEstoque": [
+      {
+        "id": 0,
+        "produto_id": 0,
+        "sku": "string",
+        "sku_fornecedor": "string",
+        "quantidade": 0,
+        "valor_compra": 0,
+        "valor_venda": 0,
+        "promocao": 0,
+        "percentual_promocao": 0,
+        "valor_promocao": 0,
+        "promocao_data_inicio": "string",
+        "promocao_data_fim": "string",
+        "compra_minima": 0,
+        "compra_maxima": 0,
+        "estoque_minimo": 0,
+        "altura": 0,
+        "largura": 0,
+        "comprimento": 0,
+        "peso_liquido": 0,
+        "combinacao1_id": 0,
+        "combinacao_atributo1_id": 0,
+        "combinacao2_id": 0,
+        "combinacao_atributo2_id": 0,
+        "combinacao3_id": 0,
+        "combinacao_atributo3_id": 0,
+        "quantidade_venda": 0,
+        "valor_frete": 0,
+        "valor_frete_adicional": 0
+      }
+    ],
+    "WsprodutoCategoria": [
+      {
+        "categoria_id": 0,
+        "principal": 0,
+        "produto_id": 0
+      }
+    ]
+  }
+}</pre>
+
+                    </td>
+                    <td>No links</td>
+                </tr>
+                <tr>
+                    <th scope="row">400</th>
+                    <td><pre>falha</pre></td>
+                    <td>No links</td>
+                </tr>
+            </tbody>
+        </table>
+                  
+    </div>
+</div>
+ 
+ 
+             
+    </div>
+</div>
+
+        </div>
+    </div>
+
+
+
+    <div class="entity">
+        <div class="entity-header">
+            <h5>Estoque</h5>
+            <small>Itens de estoque</small>
+            <hr>
+        </div>
+        <div class="entity-body">           
+            
+
+
+<div class="endpoint GET">
+    <div class="endpoint-title" data-toggle="collapse" href="#collapseget_ws_wsprodutos_estoque_id" role="button" aria-expanded="false" aria-controls="collapseget_ws_wsprodutos_estoque_id">
+        <a class="btn btn-primary btn-sm" href="#">
+           GET
+        </a> 
+        <span class="endpoint-summary-path">/ws/wsprodutos_estoque/{id}</span>
+        <small>Consulta quantidade de um item de estoque</small>
+    </div>
+    <div class="endpoint-body collapse" id="collapseget_ws_wsprodutos_estoque_id">
+        <div class="parameters-wrapper">
+    <div class="parameters-wrapper-header">
+        <h6>Parameters</h6>
+    </div>
+    <div class="parameters-inner">
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">id (integer) <span class="badge badge-warning">required</span></th>
+                    <td>ID do item de estoque a ser localizado</td>                    
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<div class="responses-wrapper">
+    <div class="responses-wrapper-header">
+        <h6>Responses</h6>
+    </div>
+    <div class="responses-inner">
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">200</th>
+                    <td>
+
+                        <pre>sucesso</pre>
+                        
+                        <p>Example Value</p>
+
+<pre>{
+  "result": {
+    "WsprodutoEstoque": {
+      "id": 0,
+      "produto_id": 0,
+      "sku": "string",
+      "sku_fornecedor": "string",
+      "quantidade": 0,
+      "valor_compra": 0,
+      "valor_venda": 0,
+      "promocao": 0,
+      "percentual_promocao": 0,
+      "valor_promocao": 0,
+      "promocao_data_inicio": "string",
+      "promocao_data_fim": "string",
+      "compra_minima": 0,
+      "compra_maxima": 0,
+      "estoque_minimo": 0,
+      "altura": 0,
+      "largura": 0,
+      "comprimento": 0,
+      "peso_liquido": 0,
+      "combinacao1_id": 0,
+      "combinacao_atributo1_id": 0,
+      "combinacao2_id": 0,
+      "combinacao_atributo2_id": 0,
+      "combinacao3_id": 0,
+      "combinacao_atributo3_id": 0,
+      "quantidade_venda": 0,
+      "valor_frete": 0,
+      "valor_frete_adicional": 0
+    }
+  }
+}</pre>
+
+                    </td>
+                    <td>No links</td>
+                </tr>
+                <tr>
+                    <th scope="row">400</th>
+                    <td><pre>falha</pre></td>
+                    <td>No links</td>
+                </tr>
+            </tbody>
+        </table>
+                  
+    </div>
+</div>
+ 
+ 
+             
+    </div>
+</div>
+
+
+<div class="endpoint PUT">
+    <div class="endpoint-title" data-toggle="collapse" href="#collapseput_ws_wsprodutos_estoque_id" role="button" aria-expanded="false" aria-controls="collapseput_ws_wsprodutos_estoque_id">
+        <a class="btn btn-primary btn-sm" href="#">
+           PUT
+        </a> 
+        <span class="endpoint-summary-path">/ws/wsprodutos_estoque/{id}</span>
+        <small>Edita quantidade de um item de estoque</small>
+    </div>
+    <div class="endpoint-body collapse" id="collapseput_ws_wsprodutos_estoque_id">
+        <div class="parameters-wrapper">
+    <div class="parameters-wrapper-header">
+        <h6>Parameters</h6>
+    </div>
+    <div class="parameters-inner">
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">id (integer) <span class="badge badge-warning">required</span></th>
+                    <td>ID do item de estoque a ser editado</td>                    
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<div class="request-wrapper">
+    <div class="request-wrapper-header">
+        <h6>Request body</h6>
+    </div>
+    <div class="request-inner">
+        
+        <p>Example Value</p>
+        
+<pre>{
+  "WsprodutoEstoque": {
+    "quantidade": 0
+  }
+}</pre>
+
+    </div>
+</div>
+
+<div class="responses-wrapper">
+    <div class="responses-wrapper-header">
+        <h6>Responses</h6>
+    </div>
+    <div class="responses-inner">
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">200</th>
+                    <td><pre>sucesso</pre></td>
+                    <td>No links</td>
+                </tr>
+                <tr>
+                    <th scope="row">400</th>
+                    <td><pre>falha</pre></td>
+                    <td>No links</td>
+                </tr>
+            </tbody>
+        </table>
+                  
+    </div>
+</div>
+ 
+ 
+             
+    </div>
+</div>
+
+
+<div class="endpoint GET">
+    <div class="endpoint-title" data-toggle="collapse" href="#collapseget_ws_wsprodutos_preco_id" role="button" aria-expanded="false" aria-controls="collapseget_ws_wsprodutos_preco_id">
+        <a class="btn btn-primary btn-sm" href="#">
+           GET
+        </a> 
+        <span class="endpoint-summary-path">/ws/wsprodutos_preco/{id}</span>
+        <small>Consulta preço de um item de estoque</small>
+    </div>
+    <div class="endpoint-body collapse" id="collapseget_ws_wsprodutos_preco_id">
+        <div class="parameters-wrapper">
+    <div class="parameters-wrapper-header">
+        <h6>Parameters</h6>
+    </div>
+    <div class="parameters-inner">
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">id (integer) <span class="badge badge-warning">required</span></th>
+                    <td>ID do item de estoque a ser localizado</td>                    
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<div class="responses-wrapper">
+    <div class="responses-wrapper-header">
+        <h6>Responses</h6>
+    </div>
+    <div class="responses-inner">
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">200</th>
+                    <td>
+
+                        <pre>sucesso</pre>
+                        
+                        <p>Example Value</p>
+
+<pre>{
+  "result": {
+    "WsprodutoEstoque": {
+      "id": 0,
+      "produto_id": 0,
+      "sku": "string",
+      "valor_compra": 0,
+      "valor_venda": 0
+    }
+  }
+}</pre>
+
+                    </td>
+                    <td>No links</td>
+                </tr>
+                <tr>
+                    <th scope="row">400</th>
+                    <td><pre>falha</pre></td>
+                    <td>No links</td>
+                </tr>
+            </tbody>
+        </table>
+                  
+    </div>
+</div>
+ 
+ 
+             
+    </div>
+</div>
+
+
+<div class="endpoint PUT">
+    <div class="endpoint-title" data-toggle="collapse" href="#collapseput_ws_wsprodutos_preco_id" role="button" aria-expanded="false" aria-controls="collapseput_ws_wsprodutos_preco_id">
+        <a class="btn btn-primary btn-sm" href="#">
+           PUT
+        </a> 
+        <span class="endpoint-summary-path">/ws/wsprodutos_preco/{id}</span>
+        <small>Edita preço de um item de estoque</small>
+    </div>
+    <div class="endpoint-body collapse" id="collapseput_ws_wsprodutos_preco_id">
+        <div class="parameters-wrapper">
+    <div class="parameters-wrapper-header">
+        <h6>Parameters</h6>
+    </div>
+    <div class="parameters-inner">
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">id (integer) <span class="badge badge-warning">required</span></th>
+                    <td>ID do item de estoque a ser editado</td>                    
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<div class="request-wrapper">
+    <div class="request-wrapper-header">
+        <h6>Request body</h6>
+    </div>
+    <div class="request-inner">
+        
+        <p>Example Value</p>
+        
+<pre>{
+  "WsprodutoEstoque": {
+    "valor_venda": 0
+  }
+}</pre>
+
+    </div>
+</div>
+
+<div class="responses-wrapper">
+    <div class="responses-wrapper-header">
+        <h6>Responses</h6>
+    </div>
+    <div class="responses-inner">
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">200</th>
+                    <td><pre>sucesso</pre></td>
+                    <td>No links</td>
+                </tr>
+                <tr>
+                    <th scope="row">400</th>
+                    <td><pre>falha</pre></td>
+                    <td>No links</td>
+                </tr>
+            </tbody>
+        </table>
+                  
+    </div>
+</div>
+ 
+ 
+             
+    </div>
+</div>
+
+        </div>
+    </div>
+
+
+
+    <div class="entity">
+        <div class="entity-header">
+            <h5>Pedidos</h5>
+            <small>Pedidos da loja</small>
+            <hr>
+        </div>
+        <div class="entity-body">           
+            
+
+
+<div class="endpoint GET">
+    <div class="endpoint-title" data-toggle="collapse" href="#collapseget_ws_wspedidos" role="button" aria-expanded="false" aria-controls="collapseget_ws_wspedidos">
+        <a class="btn btn-primary btn-sm" href="#">
+           GET
+        </a> 
+        <span class="endpoint-summary-path">/ws/wspedidos</span>
+        <small>Retorna todos os pedidos</small>
+    </div>
+    <div class="endpoint-body collapse" id="collapseget_ws_wspedidos">
+        <div class="responses-wrapper">
+    <div class="responses-wrapper-header">
+        <h6>Responses</h6>
+    </div>
+    <div class="responses-inner">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">200</th>
+                    <td>
+
+                        <pre>sucesso</pre>
+                        
+                        <p>Example Value</p>
+
+<pre>{
+  "result": [
+    {
+      "Wspedido": {
+        "id": 0,
+        "numero": "string",
+        "data_pedido": "string",
+        "pedidostatus_id": 0,
+        "cliente_tipo": "PF",
+        "cliente_cpfcnpj": "string",
+        "cliente_razaosocial": "string",
+        "cliente_ie": "string",
+        "cliente_data_nascimento": "string",
+        "cliente_logradouro": "string",
+        "cliente_numero": "string",
+        "cliente_informacoes_adicionais": "string",
+        "cliente_bairro": "string",
+        "cliente_cidade": "string",
+        "cliente_estado": "string",
+        "cliente_pais": "string",
+        "cliente_cep": "string",
+        "cliente_telefone": "string",
+        "cliente_telefone_comercial": "string",
+        "cliente_celular": "string",
+        "cliente_email": "string",
+        "cliente_observacao": "string",
+        "entrega_cpfcnpj": "string",
+        "entrega_razaosocial": "string",
+        "entrega_ie": "string",
+        "entrega_data_nascimento": "string",
+        "entrega_logradouro": "string",
+        "entrega_numero": "string",
+        "entrega_informacoes_adicionais": "string",
+        "entrega_bairro": "string",
+        "entrega_cidade": "string",
+        "entrega_estado": "string",
+        "entrega_pais": "string",
+        "entrega_cep": "string",
+        "entrega_telefone": "string",
+        "entrega_telefone_comercial": "string",
+        "entrega_celular": "string",
+        "entrega_email": "string",
+        "entrega_prazo": 0,
+        "total_pedido": 0,
+        "total_descontos": 0,
+        "total_acrescimos": 0,
+        "total_frete": 0,
+        "total_produtos": 0,
+        "total_peso": 0
+      },
+      "Item": [
+        {
+          "pedido_id": 0,
+          "produto_id": 0,
+          "produto_estoque_id": 0,
+          "sku": "string",
+          "nome_produto": "string",
+          "slug_produto": "string",
+          "origem_mercadoria": 0,
+          "tempo_producao": 0,
+          "ncm": "string",
+          "combinacoes": "string",
+          "perguntas": "string",
+          "quantidade": 0,
+          "unidade_medida_id": 0,
+          "valor_unitario": 0,
+          "valor_total": 0,
+          "altura": 0,
+          "largura": 0,
+          "comprimento": 0,
+          "peso": 0,
+          "valor_frete_unitario": 0,
+          "valor_frete_adicional": 0,
+          "objeto_codigo_rastreamento": "string",
+          "descricao": "string",
+          "image": "string",
+          "presente": 0,
+          "total_presente": 0,
+          "desconto": 0,
+          "desconto_percentual": 0
+        }
+      ]
+    }
+  ]
+}</pre>
+
+
+                    </td>
+                    <td>No links</td>
+                </tr>
+                <tr>
+                    <th scope="row">400</th>
+                    <td><pre>falha</pre></td>
+                    <td>No links</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>            
+    </div>
+</div>
+
+
+<div class="endpoint GET">
+    <div class="endpoint-title" data-toggle="collapse" href="#collapseget_ws_wspedidos_id" role="button" aria-expanded="false" aria-controls="collapseget_ws_wspedidos_id">
+        <a class="btn btn-primary btn-sm" href="#">
+           GET
+        </a> 
+        <span class="endpoint-summary-path">/ws/wspedidos/{id}</span>
+        <small>Localiza um pedido</small>
+    </div>
+    <div class="endpoint-body collapse" id="collapseget_ws_wspedidos_id">
+        <div class="parameters-wrapper">
+    <div class="parameters-wrapper-header">
+        <h6>Parameters</h6>
+    </div>
+    <div class="parameters-inner">
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">id (integer) <span class="badge badge-warning">required</span></th>
+                    <td>ID do pedido a ser localizado</td>                    
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<div class="responses-wrapper">
+    <div class="responses-wrapper-header">
+        <h6>Responses</h6>
+    </div>
+    <div class="responses-inner">
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">200</th>
+                    <td>
+
+                        <pre>sucesso</pre>
+                        
+                        <p>Example Value</p>
+
+<pre>{
+  "result": {
+    "Wspedido": {
+      "id": 0,
+      "numero": "string",
+      "data_pedido": "string",
+      "pedidostatus_id": 0,
+      "cliente_tipo": "PF",
+      "cliente_cpfcnpj": "string",
+      "cliente_razaosocial": "string",
+      "cliente_ie": "string",
+      "cliente_data_nascimento": "string",
+      "cliente_logradouro": "string",
+      "cliente_numero": "string",
+      "cliente_informacoes_adicionais": "string",
+      "cliente_bairro": "string",
+      "cliente_cidade": "string",
+      "cliente_estado": "string",
+      "cliente_pais": "string",
+      "cliente_cep": "string",
+      "cliente_telefone": "string",
+      "cliente_telefone_comercial": "string",
+      "cliente_celular": "string",
+      "cliente_email": "string",
+      "cliente_observacao": "string",
+      "entrega_cpfcnpj": "string",
+      "entrega_razaosocial": "string",
+      "entrega_ie": "string",
+      "entrega_data_nascimento": "string",
+      "entrega_logradouro": "string",
+      "entrega_numero": "string",
+      "entrega_informacoes_adicionais": "string",
+      "entrega_bairro": "string",
+      "entrega_cidade": "string",
+      "entrega_estado": "string",
+      "entrega_pais": "string",
+      "entrega_cep": "string",
+      "entrega_telefone": "string",
+      "entrega_telefone_comercial": "string",
+      "entrega_celular": "string",
+      "entrega_email": "string",
+      "entrega_prazo": 0,
+      "total_pedido": 0,
+      "total_descontos": 0,
+      "total_acrescimos": 0,
+      "total_frete": 0,
+      "total_produtos": 0,
+      "total_peso": 0
+    },
+    "Item": [
+      {
+        "pedido_id": 0,
+        "produto_id": 0,
+        "produto_estoque_id": 0,
+        "sku": "string",
+        "nome_produto": "string",
+        "slug_produto": "string",
+        "origem_mercadoria": 0,
+        "tempo_producao": 0,
+        "ncm": "string",
+        "combinacoes": "string",
+        "perguntas": "string",
+        "quantidade": 0,
+        "unidade_medida_id": 0,
+        "valor_unitario": 0,
+        "valor_total": 0,
+        "altura": 0,
+        "largura": 0,
+        "comprimento": 0,
+        "peso": 0,
+        "valor_frete_unitario": 0,
+        "valor_frete_adicional": 0,
+        "objeto_codigo_rastreamento": "string",
+        "descricao": "string",
+        "image": "string",
+        "presente": 0,
+        "total_presente": 0,
+        "desconto": 0,
+        "desconto_percentual": 0
+      }
+    ]
+  }
+}</pre>
+
+                    </td>
+                    <td>No links</td>
+                </tr>
+                <tr>
+                    <th scope="row">400</th>
+                    <td><pre>falha</pre></td>
+                    <td>No links</td>
+                </tr>
+            </tbody>
+        </table>
+                  
+    </div>
+</div>
+ 
+ 
+             
+    </div>
+</div>
+
+        </div>
+    </div>
+
+
+             
+        </section>
+
+        <section id="models">
+
+        </section> 
+    
+    </div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

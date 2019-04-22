@@ -1,0 +1,148 @@
+<div class="parameters-wrapper">
+    <div class="parameters-wrapper-header">
+        <h6>Parameters</h6>
+    </div>
+    <div class="parameters-inner">
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">id (integer) <span class="badge badge-warning">required</span></th>
+                    <td>ID do pedido a ser localizado</td>                    
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<div class="responses-wrapper">
+    <div class="responses-wrapper-header">
+        <h6>Responses</h6>
+    </div>
+    <div class="responses-inner">
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">200</th>
+                    <td>
+
+                        <pre>sucesso</pre>
+                        
+                        <p>Example Value</p>
+
+<pre>{
+  "result": {
+    "Wspedido": {
+      "id": 0,
+      "numero": "string",
+      "data_pedido": "string",
+      "pedidostatus_id": 0,
+      "cliente_tipo": "PF",
+      "cliente_cpfcnpj": "string",
+      "cliente_razaosocial": "string",
+      "cliente_ie": "string",
+      "cliente_data_nascimento": "string",
+      "cliente_logradouro": "string",
+      "cliente_numero": "string",
+      "cliente_informacoes_adicionais": "string",
+      "cliente_bairro": "string",
+      "cliente_cidade": "string",
+      "cliente_estado": "string",
+      "cliente_pais": "string",
+      "cliente_cep": "string",
+      "cliente_telefone": "string",
+      "cliente_telefone_comercial": "string",
+      "cliente_celular": "string",
+      "cliente_email": "string",
+      "cliente_observacao": "string",
+      "entrega_cpfcnpj": "string",
+      "entrega_razaosocial": "string",
+      "entrega_ie": "string",
+      "entrega_data_nascimento": "string",
+      "entrega_logradouro": "string",
+      "entrega_numero": "string",
+      "entrega_informacoes_adicionais": "string",
+      "entrega_bairro": "string",
+      "entrega_cidade": "string",
+      "entrega_estado": "string",
+      "entrega_pais": "string",
+      "entrega_cep": "string",
+      "entrega_telefone": "string",
+      "entrega_telefone_comercial": "string",
+      "entrega_celular": "string",
+      "entrega_email": "string",
+      "entrega_prazo": 0,
+      "total_pedido": 0,
+      "total_descontos": 0,
+      "total_acrescimos": 0,
+      "total_frete": 0,
+      "total_produtos": 0,
+      "total_peso": 0
+    },
+    "Item": [
+      {
+        "pedido_id": 0,
+        "produto_id": 0,
+        "produto_estoque_id": 0,
+        "sku": "string",
+        "nome_produto": "string",
+        "slug_produto": "string",
+        "origem_mercadoria": 0,
+        "tempo_producao": 0,
+        "ncm": "string",
+        "combinacoes": "string",
+        "perguntas": "string",
+        "quantidade": 0,
+        "unidade_medida_id": 0,
+        "valor_unitario": 0,
+        "valor_total": 0,
+        "altura": 0,
+        "largura": 0,
+        "comprimento": 0,
+        "peso": 0,
+        "valor_frete_unitario": 0,
+        "valor_frete_adicional": 0,
+        "objeto_codigo_rastreamento": "string",
+        "descricao": "string",
+        "image": "string",
+        "presente": 0,
+        "total_presente": 0,
+        "desconto": 0,
+        "desconto_percentual": 0
+      }
+    ]
+  }
+}</pre>
+
+                    </td>
+                    <td>No links</td>
+                </tr>
+                <tr>
+                    <th scope="row">400</th>
+                    <td><pre>falha</pre></td>
+                    <td>No links</td>
+                </tr>
+            </tbody>
+        </table>
+                  
+    </div>
+</div>
+ 
+ 
+ 
